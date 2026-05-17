@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>UMO.PRO.CAO.E.SCOOPS – Cacao d'Excellence du Cameroun</title>
+  <meta name="description" content="Coopérative de production et de commercialisation de cacao d'excellence au Cameroun. Qualité – Traçabilité – Durabilité." />
+  <meta name="keywords" content="cacao cameroun, cacao africain, coopérative cacao, export cacao, cacao bio, cacao grade 1" />
+  <meta property="og:title" content="UMO.PRO.CAO.E.SCOOPS – Cacao d'Excellence"/>
+  <meta property="og:description" content="Coopérative camerounaise d'excellence — cacao Grade 1, traçabilité certifiée, durabilité." />
+  <meta property="og:image" content="./image_site_cacao/img_centrale.jpg"/>
+    <link rel="shortcut icon" href="./image_site_cacao/logo.jpg" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script>
+  tailwind.config = {
+    darkMode: ['attribute', '[data-theme="dark"]'],
+    theme: { extend: {
+      colors: {
+        forest: {50:'#f2f7f2',100:'#e0ede0',200:'#c2dbc2',300:'#93c293',400:'#5fa05f',500:'#3a7d3a',600:'#2d6330',700:'#235127',800:'#1d4221',900:'#162f19',950:'#0d1f0f'},
+        cacao:  {50:'#faf5f0',100:'#f2e4d4',200:'#e5c9a8',300:'#d4a772',400:'#c2854a',500:'#a96a30',600:'#8b5427',700:'#704220',800:'#5a341a',900:'#452815'},
+        cream: '#fdf8f0',
+      },
+      fontFamily: { display:['"Playfair Display"','serif'], body:['Jost','sans-serif'] }
+    }}
+  }
+</script>
+</head>
+<body class="font-body overflow-x-hidden" style="background-color:var(--bg-primary);color:var(--text-primary)">
+
+  <div id="scroll-progress" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#2d6330,#a96a30);z-index:9999;transition:width 0.1s;"></div>
+
+  <div id="lightbox"><span id="lightbox-close">✕</span><img id="lightbox-img" src="" alt="" /></div>
+
+  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 scrolled" style="background:var(--nav-bg)">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3">
+        <img src="../image_site_cacao/logo-removebg-preview.png" alt="Logo" class="w-14 h-14 object-contain"/>
+        <div class="hidden sm:block">
+          <p class="font-display font-bold text-forest-800 text-sm leading-tight">UMO.PRO.CAO.E</p>
+          <p class="text-xs text-cacao-600 tracking-widest uppercase">SCOOPS</p>
+        </div>
+      </a>
+      <ul class="hidden lg:flex items-center gap-6 text-sm font-medium"><li><a href="../index.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Accueil</a></li>
+<li><a href="apropos.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">À Propos</a></li>
+<li><a href="activites.html" class="nav-link text-forest-600 font-semibold border-b-2 border-forest-600 pb-0.5">Activités</a></li>
+<li><a href="produits.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Produits</a></li>
+        <a href="organigrame.html" class="text-forest-700 font-medium py-1">organigramme</a>
+<li><a href="actualites.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Actualités</a></li>
+<li><a href="contact.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Contact</a></li>
+</ul>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1.5"><span id="dark-icon" class="text-base">🌙</span><button id="dark-toggle" aria-label="Mode sombre"></button></div>
+        <a href="contact.html" class="hidden lg:block bg-forest-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-forest-700 transition-colors">Devenir Partenaire</a>
+        <button id="menu-toggle" class="lg:hidden flex flex-col gap-1.5 p-2">
+          <span class="block w-6 h-0.5 bg-forest-800 transition-all" id="bar1"></span>
+          <span class="block w-6 h-0.5 bg-forest-800 transition-all" id="bar2"></span>
+          <span class="block w-6 h-0.5 bg-forest-800 transition-all" id="bar3"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="lg:hidden hidden backdrop-blur border-t border-forest-100" style="background:var(--nav-bg)">
+      <div class="px-6 py-4 flex flex-col gap-4"><a href="../index.html" class="text-forest-700 font-medium py-1">Accueil</a>
+<a href="apropos.html" class="text-forest-700 font-medium py-1">À Propos</a>
+<a href="activites.html" class="text-forest-600 font-semibold py-1">Activités</a>
+<a href="produits.html" class="text-forest-700 font-medium py-1">Produits</a>
+<a href="durabilite.html" class="text-forest-700 font-medium py-1">Durabilité</a>
+<a href="actualites.html" class="text-forest-700 font-medium py-1">Actualités</a>
+<a href="contact.html" class="text-forest-700 font-medium py-1">Contact</a>
+<a href="contact.html" class="bg-forest-600 text-white px-5 py-2.5 rounded-full text-sm font-medium text-center">Devenir Partenaire</a></div>
+    </div>
+  </nav>
+
+  <div class="page-header" style="background-image:url('../image_site_cacao/champ.jpg')">
+    <p class="breadcrumb mb-3"><a href="../index.html">Accueil</a> / Activités</p>
+    <h1 class="text-4xl md:text-6xl mb-4">Nos Activités</h1>
+    <p class="text-white/60 text-lg max-w-2xl mx-auto">De la plantation à la livraison — une chaîne de valeur maîtrisée de bout en bout.</p>
+  </div>
+  <!-- ACT 1 PRODUCTION -->
+  <section class="py-24" style="background:var(--bg-primary)">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal-left">
+          <span class="inline-block bg-forest-100 text-forest-700 px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase mb-4">01 — Production</span>
+          <h2 class="font-display text-4xl mb-6" style="color:var(--text-primary)">Culture du cacao<br/><em>d'excellence</em></h2>
+          <p class="leading-relaxed mb-5" style="color:var(--text-secondary)">Notre cacao est cultivé sur les terres fertiles de l'arrondissement d'Ayos, réparties dans trois bassins. Les 623 membres appliquent des pratiques rigoureuses héritées d'une longue tradition locale, combinées aux meilleures techniques modernes.</p>
+          <p class="leading-relaxed" style="color:var(--text-secondary)">Chaque plantation bénéficie d'un suivi technique par nos équipes, garantissant une qualité homogène sur l'ensemble des exploitations.</p>
+        </div>
+        <div class="reveal-right">
+          <div class="gallery-img rounded-2xl" data-lightbox="../image_site_cacao/champ.jpg">
+            <img src="../image_site_cacao/champ.jpg" alt="Champ de cacao Ayos" class="w-full h-80 object-cover"/>
+            <div class="gallery-overlay"><span class="text-white text-sm">Plantation d'Ayos, Cameroun</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 2 TRANSFORMATION — image bg -->
+  <section class="py-24 relative overflow-hidden img-bg-section" style="background-image:url('../image_site_cacao/sechage2.jpg')">
+    <div class="absolute inset-0" style="background:rgba(13,31,15,0.88)"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 reveal-left">
+          <div class="gallery-img rounded-2xl" data-lightbox="../image_site_cacao/sechage3.jpg">
+            <img src="../image_site_cacao/sechage3.jpg" alt="Séchage cacao" class="w-full h-80 object-cover"/>
+            <div class="gallery-overlay"><span class="text-white text-sm">Séchage post-récolte</span></div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 reveal-right">
+          <span class="inline-block bg-cacao-900/60 text-cacao-300 px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase mb-4">02 — Transformation</span>
+          <h2 class="font-display text-4xl text-white mb-6">Post-récolte :<br/><em class="text-cacao-300">fermentation & séchage</em></h2>
+          <p class="text-white/70 leading-relaxed mb-5">Nos 3 centres de traitement réalisent l'ensemble des opérations post-récolte : écabossage, fermentation contrôlée (5 à 7 jours) et séchage naturel.</p>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-cacao-400 rounded-full"></span>Fermentation : 5 à 7 jours</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-cacao-400 rounded-full"></span>Humidité finale : ≤ 7.5%</li>
+            <li class="flex items-center gap-2"><span class="w-2 h-2 bg-cacao-400 rounded-full"></span>Contrôle qualité à chaque étape</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 3 DURABILITE -->
+  <section class="py-24" style="background:var(--bg-secondary)">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal-left">
+          <span class="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase mb-4">03 — Durabilité</span>
+          <h2 class="font-display text-4xl mb-6" style="color:var(--text-primary)">Agriculture durable<br/><em>& agroforesterie</em></h2>
+          <p class="leading-relaxed mb-5" style="color:var(--text-secondary)">Nos cacaoyères sont cultivées sous ombrage naturel, préservant la biodiversité et réduisant les intrants chimiques. Cette méthode améliore la qualité du cacao tout en séquestrant du carbone.</p>
+          <p class="leading-relaxed" style="color:var(--text-secondary)">L'engagement dans le programme de certification biologique (2026) témoigne de notre volonté d'aller toujours plus loin.</p>
+        </div>
+        <div class="reveal-right">
+          <div class="gallery-img rounded-2xl" data-lightbox="../image_site_cacao/travailleur_terrain.jpg">
+            <img src="../image_site_cacao/travailleur_terrain.jpg" alt="Agroforesterie" class="w-full h-80 object-cover"/>
+            <div class="gallery-overlay"><span class="text-white text-sm">Agriculture durable et agroforesterie</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 4 ACCOMPAGNEMENT — image bg -->
+  <section class="py-24 relative overflow-hidden img-bg-section" style="background-image:url('../image_site_cacao/photo_famille2.jpg')">
+    <div class="absolute inset-0" style="background:rgba(92,51,23,0.88)"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 reveal-left">
+          <div class="gallery-img rounded-2xl" data-lightbox="../image_site_cacao/photo_famille3.jpg">
+            <img src="../image_site_cacao/photo_famille3.jpg" alt="Producteurs accompagnés" class="w-full h-80 object-cover"/>
+            <div class="gallery-overlay"><span class="text-white text-sm">Formation des producteurs</span></div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2 reveal-right">
+          <span class="inline-block bg-amber-900/60 text-amber-300 px-4 py-1.5 rounded-full text-xs font-medium tracking-widest uppercase mb-4">04 — Accompagnement</span>
+          <h2 class="font-display text-4xl text-white mb-6">Soutien aux<br/><em class="text-cacao-300">producteurs</em></h2>
+          <p class="text-white/70 leading-relaxed mb-5">Les 25 collaborateurs permanents assurent un accompagnement technique et administratif de nos 623 membres. Formation, gestion des parcelles, accès aux intrants de qualité.</p>
+          <p class="text-white/70 leading-relaxed">Notre modèle coopératif garantit un prix équitable, renforçant la cohésion sociale dans les communautés rurales d'Ayos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE ACTIVITES -->
+  <section class="py-24" style="background:var(--bg-primary)">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12 reveal-up">
+        <span class="text-cacao-500 text-sm tracking-widest uppercase font-medium">Nos images</span>
+        <h2 class="font-display text-4xl mt-3" style="color:var(--text-primary)">Galerie des activités</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/feve4.jpg"><img src="../image_site_cacao/feve4.jpg" alt="Fèves" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Fèves fraîches</span></div></div>
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/employe_emballant.jpg" style="animation-delay:.05s"><img src="../image_site_cacao/employe_emballant.jpg" alt="Emballage" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Emballage</span></div></div>
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/sac_cacao.jpg" style="animation-delay:.1s"><img src="../image_site_cacao/sac_cacao.jpg" alt="Sacs cacao" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Conditionnement</span></div></div>
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/sacEt_travailleur.jpg" style="animation-delay:.15s"><img src="../image_site_cacao/sacEt_travailleur.jpg" alt="Travailleur" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Travailleur</span></div></div>
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/employe_emballage3.jpg" style="animation-delay:.2s"><img src="../image_site_cacao/employe_emballage3.jpg" alt="Emballage" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Équipe emballage</span></div></div>
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/espace2.jpg" style="animation-delay:.25s"><img src="../image_site_cacao/espace2.jpg" alt="Espace travail" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Centre de traitement</span></div></div>
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/travailleurs2.jpg" style="animation-delay:.3s"><img src="../image_site_cacao/travailleurs2.jpg" alt="Travailleurs" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Équipe terrain</span></div></div>
+        <div class="gallery-img reveal-up" data-lightbox="../image_site_cacao/main_feve.jpg" style="animation-delay:.35s"><img src="../image_site_cacao/main_feve.jpg" alt="Main fève" class="w-full h-48 object-cover"/><div class="gallery-overlay"><span class="text-white text-xs">Sélection manuelle</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGISTIQUE -->
+  <section class="py-20" style="background:var(--bg-secondary)">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 reveal-up">
+        <span class="text-cacao-500 text-sm tracking-widest uppercase font-medium">De la récolte à la livraison</span>
+        <h2 class="font-display text-4xl mt-3" style="color:var(--text-primary)">Notre Logistique</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="grid md:grid-cols-5 gap-4 text-center">
+        <div class="reveal-up p-5 rounded-2xl" style="background:var(--card-bg);border:1px solid var(--border-color)">
+          <div class="text-3xl mb-3">🌱</div><p class="font-semibold text-sm" style="color:var(--text-primary)">Récolte</p><p class="text-xs mt-1" style="color:var(--text-secondary)">Dans les bassins</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center text-forest-300 text-2xl">→</div>
+        <div class="reveal-up p-5 rounded-2xl" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.1s">
+          <div class="text-3xl mb-3">🏭</div><p class="font-semibold text-sm" style="color:var(--text-primary)">Traitement</p><p class="text-xs mt-1" style="color:var(--text-secondary)">Fermentation & séchage</p>
+        </div>
+        <div class="hidden md:flex items-center justify-center text-forest-300 text-2xl">→</div>
+        <div class="reveal-up p-5 rounded-2xl" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.2s">
+          <div class="text-3xl mb-3">📦</div><p class="font-semibold text-sm" style="color:var(--text-primary)">Export</p><p class="text-xs mt-1" style="color:var(--text-secondary)">Stockage & livraison</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center reveal-up">
+        <a href="contact.html" class="inline-block bg-forest-600 text-white px-8 py-4 rounded-full font-medium hover:bg-forest-700 transition-colors hover:scale-105 transform">Demander un devis export</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0d1f0f;color:white" class="py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <img src="../image_site_cacao/logo-removebg-preview.png" alt="Logo" class="w-14 h-14 object-contain"/>
+            <div><p class="font-display font-bold text-sm">UMO.PRO.CAO.E.SCOOPS</p><p class="text-xs text-cacao-400 tracking-widest">Cameroun</p></div>
+          </div>
+          <p class="text-white/50 text-sm leading-relaxed max-w-xs">Coopérative de cacao d'excellence au Cameroun, depuis 2016.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-white/80 mb-4 text-sm tracking-wide uppercase">Navigation</h4>
+          <ul class="space-y-2 text-sm text-white/50">
+            <li><a href="../index.html" class="hover:text-cacao-300 transition-colors">Accueil</a></li>
+            <li><a href="apropos.html" class="hover:text-cacao-300 transition-colors">À Propos</a></li>
+            <li><a href="activites.html" class="hover:text-cacao-300 transition-colors">Activités</a></li>
+            <li><a href="produits.html" class="hover:text-cacao-300 transition-colors">Produits</a></li>
+        <a href="organigrame.html" class="text-forest-700 font-medium py-1">organigramme</a>
+            <li><a href="actualites.html" class="hover:text-cacao-300 transition-colors">Actualités</a></li>
+            <li><a href="contact.html" class="hover:text-cacao-300 transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-white/80 mb-4 text-sm tracking-wide uppercase">Contact</h4>
+          <ul class="space-y-2 text-sm text-white/50">
+            <li>Arrondissement d'Ayos</li><li>Nyong-et-Mfoumou, Centre</li><li>Cameroun</li>
+            <li class="pt-2"><a href="contact.html" class="text-cacao-400 hover:text-cacao-300 transition-colors">Nous contacter →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
+        <p>© 2025 UMO.PRO.CAO.E.SCOOPS. Tous droits réservés.</p><p>NZ STUDIO Creative</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/237000000000" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <button id="back-top" aria-label="Retour en haut">↑</button>
+  <script src="../js/main.js"></script>
+</body></html>
