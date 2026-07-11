@@ -152,13 +152,13 @@
 
             <!-- formulaire -->
 
-            <form method="POST" action="https://formspree.io/f/xaqgrzlz" id="contact-form" class="space-y-5" novalidate>
+            <form method="POST" action="https://formspree.io/f/mjgqnqvp" class="space-y-5 contact-form" >
               <div class="grid md:grid-cols-2 gap-5">
                 <div><label for="name" class="form-label">Nom complet <span class="text-red-400">*</span></label><input type="text" id="name" name="name" class="form-input" placeholder="Jean Dupont" required /></div>
                 <div><label for="email" class="form-label">Email <span class="text-red-400">*</span></label><input type="email" id="email" name="email" class="form-input" placeholder="mike@exemple.com" required /></div>
               </div>
               <div class="grid md:grid-cols-2 gap-5">
-                <div><label for="phone" class="form-label">Téléphone</label><input type="tel" id="phone" name="phone" class="form-input" placeholder="+237 6 xx xxx xxx" /></div>
+                <div><label for="phone" class="form-label">Téléphone</label><input type="tel" id="phone" name="phone" class="form-input" placeholder="+237 6 xx xxx xxx" maxlength="13"/></div>
                 <div><label for="pays" class="form-label">Pays</label><input type="text" id="pays" name="pays" class="form-input" placeholder="France, Allemagne…" /></div>
               </div>
               <div>

@@ -138,26 +138,53 @@ function closeLightbox() {
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
 /* ── Contact form ── */
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
+
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('form-submit');
   const successMsg = document.getElementById('form-success');
-  const submitBtn  = document.getElementById('form-submit');
-  contactForm.addEventListener('submit', async (e) => {
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
-    const name  = document.getElementById('name')?.value.trim();
-    const email = document.getElementById('email')?.value.trim();
-    const msg   = document.getElementById('message')?.value.trim();
-    if (!name || !email || !msg) { showFormError('Veuillez remplir tous les champs obligatoires.'); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFormError('Email invalide.'); return; }
+
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Envoi en cours...';
-    await new Promise(r => setTimeout(r, 1200));
-    contactForm.reset();
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Envoyer le message →';
-    if (successMsg) { successMsg.classList.remove('hidden'); setTimeout(() => successMsg.classList.add('hidden'), 6000); }
+    submitBtn.textContent = "Envoi en cours...";
+
+    emailjs.sendForm('TON_SERVICE_ID', 'TON_TEMPLATE_ID', form)
+      .then(() => {
+        successMsg.classList.remove('hidden');
+        form.reset();
+        submitBtn.textContent = "Envoyer le message →";
+        submitBtn.disabled = false;
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      })
+      .catch((error) => {
+        console.error('Erreur EmailJS:', error);
+        alert("Une erreur est survenue lors de l'envoi. Merci de réessayer ou de nous contacter via WhatsApp.");
+        submitBtn.textContent = "Envoyer le message →";
+        submitBtn.disabled = false;
+      });
   });
-}
+  
+// const contactForm = document.getElementById('contact-form');
+// if (contactForm) {
+//   const successMsg = document.getElementById('form-success');
+//   const submitBtn  = document.getElementById('form-submit');
+//   contactForm.addEventListener('submit', async (e) => {
+//     e.preventDefault();
+//     const name  = document.getElementById('name')?.value.trim();
+//     const email = document.getElementById('email')?.value.trim();
+//     const msg   = document.getElementById('message')?.value.trim();
+//     if (!name || !email || !msg) { showFormError('Veuillez remplir tous les champs obligatoires.'); return; }
+//     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFormError('Email invalide.'); return; }
+//     submitBtn.disabled = true;
+//     submitBtn.textContent = 'Envoi en cours...';
+//     await new Promise(r => setTimeout(r, 1200));
+//     contactForm.reset();
+//     submitBtn.disabled = false;
+//     submitBtn.textContent = 'Envoyer le message →';
+//     if (successMsg) { successMsg.classList.remove('hidden'); setTimeout(() => successMsg.classList.add('hidden'), 6000); }
+//   });
+// }
 function showFormError(msg) {
   let err = document.getElementById('form-error');
   if (!err) { err = document.createElement('p'); err.id = 'form-error'; err.className = 'text-red-500 text-sm mt-2'; document.getElementById('contact-form')?.appendChild(err); }
