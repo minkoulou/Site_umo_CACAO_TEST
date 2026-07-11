@@ -146,19 +146,6 @@
     <p class="text-white/60 text-lg max-w-2xl mx-auto">Récoltes, événements, partenariats — suivez la vie de notre coopérative.</p>
   </div>
   <!-- SEARCH + FILTER -->
-  <section class="py-10 border-b" style="background:var(--bg-secondary);border-color:var(--border-color)">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="flex flex-col sm:flex-row gap-4 items-center">
-        <input type="text" id="blog-search" placeholder="Rechercher une actualité..." class="form-input flex-1" />
-        <div class="flex gap-2 flex-wrap">
-          <button onclick="filterPosts('all')" class="filter-btn active px-4 py-2 rounded-full bg-forest-600 text-white text-sm font-medium transition-colors" data-filter="all">Tout</button>
-          <button onclick="filterPosts('recolte')" class="filter-btn px-4 py-2 rounded-full bg-forest-100 text-forest-700 text-sm font-medium hover:bg-forest-200 transition-colors" data-filter="recolte">Récoltes</button>
-          <button onclick="filterPosts('partenariat')" class="filter-btn px-4 py-2 rounded-full bg-forest-100 text-forest-700 text-sm font-medium hover:bg-forest-200 transition-colors" data-filter="partenariat">Partenariats</button>
-          <button onclick="filterPosts('evenement')" class="filter-btn px-4 py-2 rounded-full bg-forest-100 text-forest-700 text-sm font-medium hover:bg-forest-200 transition-colors" data-filter="evenement">Événements</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ARTICLES -->
   <section class="py-20" style="background:var(--bg-primary)">
@@ -318,11 +305,11 @@
     <div class="absolute inset-0" style="background:rgba(13,31,15,0.88)"></div>
     <div class="relative z-10 max-w-2xl mx-auto px-6 reveal-up">
       <h2 class="font-display text-3xl text-white mb-4">Restez informé</h2>
-      <p class="text-white/60 mb-8">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités.</p>
-      <form id="newsletter-form" class="flex max-w-md mx-auto">
-        <input type="email" placeholder="Votre adresse email" class="newsletter-input" required />
+      <a href="./contact.html" class="text-green-300/60 mb-8"> Contacter →</p>
+      <!-- <form id="newsletter-form" class="flex max-w-md mx-auto">
+        <input type="email" name="email" placeholder="Votre adresse email" class="newsletter-input" required />
         <button type="submit" class="bg-cacao-500 hover:bg-cacao-600 text-white px-6 py-3 rounded-r-full font-medium transition-colors text-sm whitespace-nowrap">S'inscrire</button>
-      </form>
+      </form> -->
     </div>
   </section>
 

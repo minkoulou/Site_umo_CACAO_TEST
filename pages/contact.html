@@ -54,6 +54,12 @@
   }
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+  emailjs.init({ publicKey: "_3o2RPuQ8NEwvYvt7" });
+</script>
+
 </head>
 <body class="font-body overflow-x-hidden" style="background-color:var(--bg-primary);color:var(--text-primary)">
 
@@ -151,8 +157,9 @@
             </div>
 
             <!-- formulaire -->
+<!-- method="POST" action="https://formspree.io/f/mjgqnqvp" -->
 
-            <form method="POST" action="https://formspree.io/f/mjgqnqvp" class="space-y-5 contact-form" >
+            <form id="contact-form" class="space-y-5 contact-form">
               <div class="grid md:grid-cols-2 gap-5">
                 <div><label for="name" class="form-label">Nom complet <span class="text-red-400">*</span></label><input type="text" id="name" name="name" class="form-input" placeholder="Jean Dupont" required /></div>
                 <div><label for="email" class="form-label">Email <span class="text-red-400">*</span></label><input type="email" id="email" name="email" class="form-input" placeholder="mike@exemple.com" required /></div>
@@ -160,19 +167,20 @@
               <div class="grid md:grid-cols-2 gap-5">
                 <div><label for="phone" class="form-label">Téléphone</label><input type="tel" id="phone" name="phone" class="form-input" placeholder="+237 6 xx xxx xxx" maxlength="13"/></div>
                 <div><label for="pays" class="form-label">Pays</label><input type="text" id="pays" name="pays" class="form-input" placeholder="France, Allemagne…" /></div>
-              </div>
+               </div>
               <div>
                 <label for="sujet" class="form-label">Objet <span class="text-red-400">*</span></label>
                 <select id="sujet" name="sujet" class="form-input" required>
                   <option value="" disabled selected>Choisir un sujet</option>
-                  <option value="partenariat">Partenariat commercial</option>
-                  <option value="commande">Demande de commande / devis</option>
-                  <option value="echantillon">Demande d'échantillons</option>
-                  <option value="bio">Cacao biologique (2026)</option>
-                  <option value="visite">Visite de la coopérative</option>
-                  <option value="autre">Autre demande</option>
+                  <option value="Partenariat commercial">Partenariat commercial</option>
+                  <option value="Demande de commande / devis">Demande de commande / devis</option>
+                  <option value="Demande d'échantillons">Demande d'échantillons</option>
+                  <option value="Cacao biologique (2026)">Cacao biologique (2026)</option>
+                  <option value="Visite de la coopérative">Visite de la coopérative</option>
+                  <option value="Autre demande">Autre demande</option>
                 </select>
               </div>
+             
               <div><label for="entreprise" class="form-label">Entreprise</label><input type="text" id="entreprise" name="entreprise" class="form-input" placeholder="Nom de votre société" /></div>
               <div><label for="message" class="form-label">Message <span class="text-red-400">*</span></label><textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Décrivez votre demande, les quantités souhaitées…" required></textarea></div>
               <div class="flex items-start gap-3">

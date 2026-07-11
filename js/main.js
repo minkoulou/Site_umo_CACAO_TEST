@@ -139,7 +139,9 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
 
 /* ── Contact form ── */
 
-  const form = document.getElementById('contact-form');
+ const form = document.getElementById('contact-form');
+
+if (form) {
   const submitBtn = document.getElementById('form-submit');
   const successMsg = document.getElementById('form-success');
 
@@ -149,7 +151,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
     submitBtn.disabled = true;
     submitBtn.textContent = "Envoi en cours...";
 
-    emailjs.sendForm('TON_SERVICE_ID', 'TON_TEMPLATE_ID', form)
+    emailjs.sendForm('service_4156s6k', 'template_2s0mu8d', form)
       .then(() => {
         successMsg.classList.remove('hidden');
         form.reset();
@@ -164,27 +166,9 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbo
         submitBtn.disabled = false;
       });
   });
-  
-// const contactForm = document.getElementById('contact-form');
-// if (contactForm) {
-//   const successMsg = document.getElementById('form-success');
-//   const submitBtn  = document.getElementById('form-submit');
-//   contactForm.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-//     const name  = document.getElementById('name')?.value.trim();
-//     const email = document.getElementById('email')?.value.trim();
-//     const msg   = document.getElementById('message')?.value.trim();
-//     if (!name || !email || !msg) { showFormError('Veuillez remplir tous les champs obligatoires.'); return; }
-//     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showFormError('Email invalide.'); return; }
-//     submitBtn.disabled = true;
-//     submitBtn.textContent = 'Envoi en cours...';
-//     await new Promise(r => setTimeout(r, 1200));
-//     contactForm.reset();
-//     submitBtn.disabled = false;
-//     submitBtn.textContent = 'Envoyer le message →';
-//     if (successMsg) { successMsg.classList.remove('hidden'); setTimeout(() => successMsg.classList.add('hidden'), 6000); }
-//   });
-// }
+}
+
+
 function showFormError(msg) {
   let err = document.getElementById('form-error');
   if (!err) { err = document.createElement('p'); err.id = 'form-error'; err.className = 'text-red-500 text-sm mt-2'; document.getElementById('contact-form')?.appendChild(err); }
@@ -193,19 +177,33 @@ function showFormError(msg) {
 }
 
 /* ── Newsletter ── */
-const newsletterForm = document.getElementById('newsletter-form');
-if (newsletterForm) {
-  newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const input = newsletterForm.querySelector('input[type="email"]');
-    if (input && input.value) {
-      const btn = newsletterForm.querySelector('button');
-      if (btn) { btn.textContent = '✓ Inscrit !'; btn.disabled = true; }
-      input.value = '';
-      setTimeout(() => { if (btn) { btn.textContent = "S'inscrire"; btn.disabled = false; } }, 3000);
-    }
-  });
-}
+
+// const newsletterForm = document.getElementById('newsletter-form');
+// if (newsletterForm) {
+//   newsletterForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
+//     const input = newsletterForm.querySelector('input[type="email"]');
+//     const btn = newsletterForm.querySelector('button');
+
+//     if (input && input.value) {
+//       btn.disabled = true;
+//       btn.textContent = "Envoi...";
+
+//       emailjs.sendForm("service_4156s6k","template_dtxg90k", newsletterForm)
+//         .then(() => {
+//           btn.textContent = '✓ Inscrit !';
+//           input.value = '';
+//           setTimeout(() => { btn.textContent = "S'inscrire"; btn.disabled = false; }, 3000);
+//         })
+//         .catch((error) => {
+//           console.error('Erreur newsletter:', error);
+//           btn.textContent = "Erreur, réessayez";
+//           btn.disabled = false;
+//           setTimeout(() => { btn.textContent = "S'inscrire"; }, 3000);
+//         });
+//     }
+//   });
+// }
 
 /* ── Smooth scroll ── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
