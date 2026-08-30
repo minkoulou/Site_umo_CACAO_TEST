@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://site-umo-cacao-test.vercel.app/sitemap.xml
