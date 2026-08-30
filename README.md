@@ -30,7 +30,7 @@ umo-rebuilt/
 
 ---
 
-## 🚀 Comment utiliser le site
+##  Comment utiliser le site
 
 ### Ouvrir en local
 1. Extraire l'archive ZIP/TAR dans un dossier
@@ -45,16 +45,16 @@ umo-rebuilt/
 
 ---
 
-## 🌙 Mode Sombre
+##  Mode Sombre
 
 Le site intègre un mode sombre complet :
-- Bouton **🌙 / ☀️** dans la barre de navigation sur toutes les pages
+- Bouton **/** dans la barre de navigation sur toutes les pages
 - La préférence est **sauvegardée automatiquement** dans le navigateur
 - Détecte automatiquement la préférence système (Windows/Mac/Mobile)
 
 ---
 
-## ✏️ Comment modifier le contenu
+##Comment modifier le contenu
 
 ### Changer un texte
 1. Ouvrir le fichier HTML concerné avec un éditeur (ex: VS Code, Notepad++)
@@ -67,28 +67,9 @@ Le site intègre un mode sombre complet :
 2. Dans le fichier HTML, remplacer le nom du fichier dans la balise `<img src="...">`
 3. Conserver les mêmes dimensions recommandées (voir ci-dessous)
 
-### Dimensions d'images recommandées
-| Usage | Dimensions | Fichier |
-|-------|-----------|---------|
-| Hero accueil | 1920×1080 px min | `img_centrale.jpg` |
-| Pages headers | 1920×800 px | `champ.jpg`, etc. |
-| Galerie | 800×600 px | `feve.jpg`, etc. |
-| Logo | PNG transparent | `logo-removebg-preview.png` |
 
-### Changer le numéro WhatsApp
-Rechercher `237000000000` dans tous les fichiers HTML et le remplacer par votre vrai numéro (sans `+`, sans espaces).
-
-### Changer l'email de contact
-Rechercher `contact@umoproca.cm` et le remplacer par votre vrai email.
 
 ---
-
-## 📞 Contacts & Coordonnées à mettre à jour
-
-Dans `pages/contact.html` et dans le footer de chaque page :
-- **Téléphone** : `+237 XXX XXX XXX` → remplacer par le vrai numéro
-- **Email** : `contact@umoproca.cm` → remplacer par le vrai email
-- **WhatsApp** : `https://wa.me/237000000000` → remplacer le numéro
 
 ---
 
@@ -103,10 +84,6 @@ Dans `pages/contact.html` et dans le footer de chaque page :
 - ✅ Structure HTML sémantique (h1, h2, h3...)
 - ✅ Animations scroll pour l'engagement utilisateur
 
-**À faire après mise en ligne :**
-1. Soumettre `sitemap.xml` sur [Google Search Console](https://search.google.com/search-console)
-2. Créer une fiche [Google My Business](https://business.google.com)
-3. Remplacer les URL `umoprocao.cm` par votre vrai domaine
 
 ---
 
