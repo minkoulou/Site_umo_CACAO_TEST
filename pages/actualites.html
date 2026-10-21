@@ -2,125 +2,148 @@
 <html lang="fr" data-theme="light">
 
 <head>
-  
-   <meta charset="UTF-8" />
-  
+
+  <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <title>UMO.PRO.CAO.E.SCOOPS – Cacao d'Excellence du Cameroun</title>
-  
-  <meta name="description" content="Coopérative de production et de commercialisation de cacao d'excellence au Cameroun . Qualité – Traçabilité – Durabilité." />
-  
-  <meta name="keywords" content="cacao cameroun, cacao africain, coopérative cacao, export cacao, cacao bio, cacao grade 1" />
-  
+
+  <meta name="description"
+    content="Coopérative de production et de commercialisation de cacao d'excellence au Cameroun . Qualité – Traçabilité – Durabilité." />
+
+  <meta name="keywords"
+    content="cacao cameroun, cacao africain, coopérative cacao, export cacao, cacao bio, cacao grade 1" />
+
   <meta property="article:author" content="UMO.PRO.CAO.E.SCOOPS">
 
   <meta name="author" content="UMO.PRO.CAO.E.SCOOPS">
 
-  <meta property="og:title" content="UMO.PRO.CAO.E.SCOOPS – Cacao d'Excellence"/>
-  
-  <meta property="og:description" content="Coopérative camerounaise d'excellence — cacao Grade 1.. traçabilité certifiée et durabilité..." />
-  
-  <meta property="og:image" content="https://ibb.co/XZwtCwBZ"/>
+  <meta property="og:title" content="UMO.PRO.CAO.E.SCOOPS – Cacao d'Excellence" />
+
+  <meta property="og:description"
+    content="Coopérative camerounaise d'excellence — cacao Grade 1.. traçabilité certifiée et durabilité..." />
+
+  <meta property="og:image" content="https://ibb.co/XZwtCwBZ" />
 
   <meta property="og:url" content="https://site-umo-cacao-test.vercel.app/" />
 
-  
+
   <link rel="shortcut icon" href="../image_site_cacao/logo.jpg" type="image/x-icon">
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+
   <link rel="stylesheet" href="../css/style.css" />
-  
+
   <script>
-  tailwind.config = {
-    darkMode: ['attribute', '[data-theme="dark"]'],
-    theme: { extend: {
-      colors: {
-        forest: {50:'#f2f7f2',100:'#e0ede0',200:'#c2dbc2',
-        300:'#93c293',400:'#5fa05f',500:'#3a7d3a',600:'#2d6330',700:'#235127',
-        800:'#1d4221',900:'#162f19',950:'#0d1f0f'},
-        cacao:  {50:'#faf5f0',100:'#f2e4d4',200:'#e5c9a8',
-        300:'#d4a772',400:'#c2854a',500:'#a96a30',600:'#8b5427',
-        700:'#704220',800:'#5a341a',900:'#452815'},
-        cream: '#fdf8f0',
-      },
-      fontFamily: { display:['"Playfair Display"','serif'], body:['Jost','sans-serif'] }
-    }}
-  }
-</script>
+    tailwind.config = {
+      darkMode: ['attribute', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              50: '#f2f7f2', 100: '#e0ede0', 200: '#c2dbc2',
+              300: '#93c293', 400: '#5fa05f', 500: '#3a7d3a', 600: '#2d6330', 700: '#235127',
+              800: '#1d4221', 900: '#162f19', 950: '#0d1f0f'
+            },
+            cacao: {
+              50: '#faf5f0', 100: '#f2e4d4', 200: '#e5c9a8',
+              300: '#d4a772', 400: '#c2854a', 500: '#a96a30', 600: '#8b5427',
+              700: '#704220', 800: '#5a341a', 900: '#452815'
+            },
+            cream: '#fdf8f0',
+          },
+          fontFamily: { display: ['"Playfair Display"', 'serif'], body: ['Jost', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
 
-<style>
+  <style>
+    .cardText {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
 
-  .cardText{
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    transition: all 0.3s;
-  }
+    .cardText.expanded {
+      -webkit-line-clamp: unset;
+      overflow: visible;
 
-  .cardText.expanded{
-    -webkit-line-clamp: unset;
-    overflow: visible;
+    }
 
-  }
+    .voir {
+      cursor: pointer;
+    }
+  </style>
 
-  .voir{
-    cursor: pointer;
-  }
+  <!-- script pour voir plus  -->
 
-</style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const boutons = document.querySelectorAll('.voir');
 
-<!-- script pour voir plus  -->
+      boutons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // on cherche le texte à l'intérieur de la même card (parent .p-6)
+          const texte = btn.closest('.p-6').querySelector('.cardText');
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const boutons = document.querySelectorAll('.voir');
-
-    boutons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // on cherche le texte à l'intérieur de la même card (parent .p-6)
-        const texte = btn.closest('.p-6').querySelector('.cardText');
-
-        texte.classList.toggle('expanded');
-        const ouvert = texte.classList.contains('expanded');
-        btn.textContent = ouvert ? 'Voir moins' : 'Voir plus';
+          texte.classList.toggle('expanded');
+          const ouvert = texte.classList.contains('expanded');
+          btn.textContent = ouvert ? 'Voir moins' : 'Voir plus';
+        });
       });
     });
-  });
-</script>
-   
+  </script>
+
 
 </head>
+
 <body class="font-body overflow-x-hidden" style="background-color:var(--bg-primary);color:var(--text-primary)">
 
-  <div id="scroll-progress" style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#2d6330,#a96a30);z-index:9999;transition:width 0.1s;"></div>
+  <div id="scroll-progress"
+    style="position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#2d6330,#a96a30);z-index:9999;transition:width 0.1s;">
+  </div>
 
   <div id="lightbox"><span id="lightbox-close">✕</span><img id="lightbox-img" src="" alt="" /></div>
 
-  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 scrolled" style="background:var(--nav-bg)">
+  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 scrolled"
+    style="background:var(--nav-bg)">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="../index.html" class="flex items-center gap-3">
-        <img src="../image_site_cacao/logo-removebg-preview.png" alt="Logo" class="w-14 h-14 object-contain"/>
+        <img src="../image_site_cacao/logo-removebg-preview.png" alt="Logo" class="w-14 h-14 object-contain" />
         <div class="hidden sm:block">
           <p class="font-display font-bold text-forest-800 text-sm leading-tight">UMO.PRO.CAO.E</p>
           <p class="text-xs text-cacao-600 tracking-widest uppercase">SCOOPS</p>
         </div>
       </a>
-      <ul class="hidden lg:flex items-center gap-6 text-sm font-medium"><li><a href="../index.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Accueil</a></li>
-<li><a href="apropos.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">À Propos</a></li>
-<li><a href="activites.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Activités</a></li>
-<li><a href="produits.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Produits</a></li>
+      <ul class="hidden lg:flex items-center gap-6 text-sm font-medium">
+        <li><a href="../index.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Accueil</a>
+        </li>
+        <li><a href="apropos.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">À Propos</a>
+        </li>
+        <li><a href="activites.html"
+            class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Activités</a></li>
+        <li><a href="produits.html"
+            class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Produits</a></li>
         <a href="organigrame.html" class="text-forest-700 font-medium py-1">organigramme</a>
-<li><a href="actualites.html" class="nav-link text-forest-600 font-semibold border-b-2 border-forest-600 pb-0.5">Actualités</a></li>
-<li><a href="contact.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Contact</a></li>
-</ul>
+        <li><a href="actualites.html"
+            class="nav-link text-forest-600 font-semibold border-b-2 border-forest-600 pb-0.5">Actualités</a></li>
+        <li><a href="contact.html" class="nav-link text-forest-700 hover:text-forest-500 transition-colors">Contact</a>
+        </li>
+      </ul>
       <div class="flex items-center gap-3">
-        <div class="flex items-center gap-1.5"><span id="dark-icon" class="text-base">🌙</span><button id="dark-toggle" aria-label="Mode sombre"></button></div>
-        <a href="contact.html" class="hidden lg:block bg-forest-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-forest-700 transition-colors">Devenir Partenaire</a>
+        <div class="flex items-center gap-1.5"><span id="dark-icon" class="text-base">🌙</span><button id="dark-toggle"
+            aria-label="Mode sombre"></button></div>
+        <a href="contact.html"
+          class="hidden lg:block bg-forest-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-forest-700 transition-colors">Devenir
+          Partenaire</a>
         <button id="menu-toggle" class="lg:hidden flex flex-col gap-1.5 p-2">
           <span class="block w-6 h-0.5 bg-forest-800 transition-all" id="bar1"></span>
           <span class="block w-6 h-0.5 bg-forest-800 transition-all" id="bar2"></span>
@@ -128,22 +151,28 @@
         </button>
       </div>
     </div>
-    <div id="mobile-menu" class="lg:hidden hidden backdrop-blur border-t border-forest-100" style="background:var(--nav-bg)">
-      <div class="px-6 py-4 flex flex-col gap-4"><a href="../index.html" class="text-forest-700 font-medium py-1">Accueil</a>
-<a href="apropos.html" class="text-forest-700 font-medium py-1">À Propos</a>
-<a href="activites.html" class="text-forest-700 font-medium py-1">Activités</a>
-<a href="produits.html" class="text-forest-700 font-medium py-1">Produits</a>
-<a href="durabilite.html" class="text-forest-700 font-medium py-1">Durabilité</a>
-<a href="actualites.html" class="text-forest-600 font-semibold py-1">Actualités</a>
-<a href="contact.html" class="text-forest-700 font-medium py-1">Contact</a>
-<a href="contact.html" class="bg-forest-600 text-white px-5 py-2.5 rounded-full text-sm font-medium text-center">Devenir Partenaire</a></div>
+    <div id="mobile-menu" class="lg:hidden hidden backdrop-blur border-t border-forest-100"
+      style="background:var(--nav-bg)">
+      <div class="px-6 py-4 flex flex-col gap-4"><a href="../index.html"
+          class="text-forest-700 font-medium py-1">Accueil</a>
+        <a href="apropos.html" class="text-forest-700 font-medium py-1">À Propos</a>
+        <a href="activites.html" class="text-forest-700 font-medium py-1">Activités</a>
+        <a href="produits.html" class="text-forest-700 font-medium py-1">Produits</a>
+        <a href="durabilite.html" class="text-forest-700 font-medium py-1">Durabilité</a>
+        <a href="actualites.html" class="text-forest-600 font-semibold py-1">Actualités</a>
+        <a href="contact.html" class="text-forest-700 font-medium py-1">Contact</a>
+        <a href="contact.html"
+          class="bg-forest-600 text-white px-5 py-2.5 rounded-full text-sm font-medium text-center">Devenir
+          Partenaire</a>
+      </div>
     </div>
   </nav>
 
   <div class="page-header" style="background-image:url('../image_site_cacao/sechage.jpg')">
     <p class="breadcrumb mb-3"><a href="../index.html">Accueil</a> / Actualités</p>
     <h1 class="text-4xl md:text-6xl mb-4">Actualités</h1>
-    <p class="text-white/60 text-lg max-w-2xl mx-auto">Récoltes, événements, partenariats — suivez la vie de notre coopérative.</p>
+    <p class="text-white/60 text-lg max-w-2xl mx-auto">Récoltes, événements, partenariats — suivez la vie de notre
+      coopérative.</p>
   </div>
   <!-- SEARCH + FILTER -->
 
@@ -153,61 +182,84 @@
       <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
 
-        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement" style="background:var(--card-bg);border:1px solid var(--border-color)">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement"
+          style="background:var(--card-bg);border:1px solid var(--border-color)">
           <div class="gallery-img" data-lightbox="../image_site_cacao/prix.jpeg">
-            <img src="../image_site_cacao/prix.jpeg" alt="Amsterdam 2023" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/prix.jpeg" alt="Amsterdam 2023" class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">🥉 Buea 2026</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Événement</span><span class="text-xs" style="color:var(--text-secondary)">Mai 2026</span></div>
-            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Anong Manuelle Ange décroche la deuxième place au Concours National de Pâtisserie</h3>
-            
-            <p class="text-sm leading-relaxed mb-4 cardText" style="color:var(--text-secondary)">Le Cacao & Coffee Festival est une vitrine incontournable de la filière cacao et café au Cameroun. Chaque édition rassemble producteurs, transformateurs, artisans, entrepreneurs et passionnés autour d'un objectif commun : valoriser les richesses agricoles nationales et encourager l'innovation.
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Événement</span><span
+                class="text-xs" style="color:var(--text-secondary)">Mai 2026</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Anong Manuelle Ange décroche la
+              deuxième place au Concours National de Pâtisserie</h3>
 
-               Cette année, le festival a été marqué par une belle performance qui illustre parfaitement le potentiel de la jeunesse camerounaise.
+            <p class="text-sm leading-relaxed mb-4 cardText" style="color:var(--text-secondary)">Le Cacao & Coffee
+              Festival est une vitrine incontournable de la filière cacao et café au Cameroun. Chaque édition rassemble
+              producteurs, transformateurs, artisans, entrepreneurs et passionnés autour d'un objectif commun :
+              valoriser les richesses agricoles nationales et encourager l'innovation.
 
-               Une jeune passionnée qui fait honneur au Cameroun
+              Cette année, le festival a été marqué par une belle performance qui illustre parfaitement le potentiel de
+              la jeunesse camerounaise.
 
-               Étudiante à l'Université de Buea, Anong Manuelle Ange s'est distinguée lors du Concours National de Pâtisserie en remportant la deuxième place grâce à une création mettant en valeur les produits dérivés du cacao de UMOPROCAOE SCOOPS.
+              Une jeune passionnée qui fait honneur au Cameroun
 
-               Face à de nombreux candidats venus de différentes régions du pays, elle a su convaincre le jury par sa maîtrise technique, sa créativité et la qualité gustative de sa réalisation.
+              Étudiante à l'Université de Buea, Anong Manuelle Ange s'est distinguée lors du Concours National de
+              Pâtisserie en remportant la deuxième place grâce à une création mettant en valeur les produits dérivés du
+              cacao de UMOPROCAOE SCOOPS.
 
-               Cette distinction est le fruit d'un travail rigoureux, d'une passion pour la pâtisserie et d'un engagement à valoriser les produits locaux.
+              Face à de nombreux candidats venus de différentes régions du pays, elle a su convaincre le jury par sa
+              maîtrise technique, sa créativité et la qualité gustative de sa réalisation.
 
-               Le cacao de UMOPROCAOE SCOOPS au service de l'innovation
+              Cette distinction est le fruit d'un travail rigoureux, d'une passion pour la pâtisserie et d'un engagement
+              à valoriser les produits locaux.
 
-               À travers cette réussite, c'est également tout le savoir-faire de UMOPROCAOE SCOOPS qui est mis à l'honneur.
+              Le cacao de UMOPROCAOE SCOOPS au service de l'innovation
 
-               Engagée dans la production d'un cacao de qualité et dans la promotion de sa transformation locale, la coopérative accompagne 
-               
-               les initiatives qui démontrent le potentiel du cacao camerounais dans des secteurs à forte valeur ajoutée, notamment 
-               
-               la pâtisserie, la chocolaterie et l'agroalimentaire..Les produits issus de notre cacao offrent aux artisans et aux professionnels une matière première de qualité, capable de répondre aux exigences des concours, des restaurants, des hôtels et des consommateurs.
+              À travers cette réussite, c'est également tout le savoir-faire de UMOPROCAOE SCOOPS qui est mis à
+              l'honneur.
+
+              Engagée dans la production d'un cacao de qualité et dans la promotion de sa transformation locale, la
+              coopérative accompagne
+
+              les initiatives qui démontrent le potentiel du cacao camerounais dans des secteurs à forte valeur ajoutée,
+              notamment
+
+              la pâtisserie, la chocolaterie et l'agroalimentaire..Les produits issus de notre cacao offrent aux
+              artisans et aux professionnels une matière première de qualité, capable de répondre aux exigences des
+              concours, des restaurants, des hôtels et des consommateurs.
 
               Encourager la jeunesse à transformer nos richesses
 
-              Le parcours d'Anong Manuelle Ange illustre parfaitement l'importance de 
+              Le parcours d'Anong Manuelle Ange illustre parfaitement l'importance de
               promouvoir la transformation locale des produits agricoles.
 
-              Au-delà de la simple production, le cacao représente aujourd'hui une véritable 
+              Au-delà de la simple production, le cacao représente aujourd'hui une véritable
               opportunité de création de valeur, d'innovation et d'entrepreneuriat pour la jeunesse camerounaise.
 
-              En encourageant les jeunes talents à utiliser les ressources locales, 
-              nous contribuons à bâtir une économie plus dynamique, plus compétitive et davantage tournée vers l'excellence.
+              En encourageant les jeunes talents à utiliser les ressources locales,
+              nous contribuons à bâtir une économie plus dynamique, plus compétitive et davantage tournée vers
+              l'excellence.
 
               Une fierté pour toute la coopérative
 
-              Toute l'équipe de UMOPROCAOE SCOOPS adresse ses chaleureuses félicitations à Anong Manuelle Ange pour cette remarquable performance.
+              Toute l'équipe de UMOPROCAOE SCOOPS adresse ses chaleureuses félicitations à Anong Manuelle Ange pour
+              cette remarquable performance.
 
-              Sa deuxième place au Concours National de Pâtisserie constitue une source de fierté pour la coopérative et une preuve que le cacao camerounais peut être au cœur de créations d'exception.
+              Sa deuxième place au Concours National de Pâtisserie constitue une source de fierté pour la coopérative et
+              une preuve que le cacao camerounais peut être au cœur de créations d'exception.
 
-              Nous lui souhaitons une brillante carrière et espérons que cette réussite inspirera de nombreux autres jeunes à croire en leur talent et à valoriser les produits issus de notre terroir.
+              Nous lui souhaitons une brillante carrière et espérons que cette réussite inspirera de nombreux autres
+              jeunes à croire en leur talent et à valoriser les produits issus de notre terroir.
 
-              Parce que derrière chaque réussite se cache une passion, un savoir-faire et une matière première de qualité, UMOPROCAOE SCOOPS 
-              
-              poursuivra son engagement pour faire rayonner le cacao camerounais, au Cameroun comme à l'international.</p>
-            
-              <button class="text-green-500 voir">Voir plus</button>
+              Parce que derrière chaque réussite se cache une passion, un savoir-faire et une matière première de
+              qualité, UMOPROCAOE SCOOPS
+
+              poursuivra son engagement pour faire rayonner le cacao camerounais, au Cameroun comme à l'international.
+            </p>
+
+            <button class="text-green-500 voir">Voir plus</button>
 
           </div>
 
@@ -215,112 +267,196 @@
 
 
 
-        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement" style="background:var(--card-bg);border:1px solid var(--border-color)">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement"
+          style="background:var(--card-bg);border:1px solid var(--border-color)">
+          <div class="gallery-img" data-lightbox="../image_site_cacao/PDG-et-Mincommerce.jpeg">
+            <img src="../image_site_cacao/PDG-et-Mincommerce.jpeg" alt="Mincommerce 2026" class="w-full h-48 object-cover" />
+           
+            <!-- <div class="gallery-overlay"><span class="text-white text-xs"></span></div> -->
+
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Événement</span><span
+                class="text-xs" style="color:var(--text-secondary)">Octobre 2026</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">CACAO BIO 1000 : plus de 524 millions de FCFA pour transformer durablement la filière cacao camerounaise.</h3>
+
+            <p class="text-sm leading-relaxed mb-4 cardText" style="color:var(--text-secondary)">
+
+              La coopérative UMO.PRO.CAO.E.SCOOPS a franchi une étape majeure avec la signature d’un contrat-cadre de
+              partenariat stratégique avec Protect First AG, en présence de Monsieur Luc Magloire Mbarga Atangana,
+              Ministre du Commerce du Cameroun.
+
+              CACAO BIO 1000 est un programme de conversion progressive vers le cacao biologique. Il vise à accompagner
+              les producteurs, promouvoir des pratiques agricoles durables, renforcer le contrôle interne et la
+              traçabilité, améliorer la qualité du cacao et préparer les exploitations aux exigences de la certification
+              biologique et des marchés internationaux.
+
+              Le projet en chiffres :
+              * 1 100 producteurs concernés ;
+              * Environ 3 333 hectares de plantations ;
+              * 1 000 tonnes de cacao biologique visées ;
+              * 48 mois de déploiement opérationnel ;
+              * Plus de 800 000 euros de financement annoncé, soit plus de 524,8 millions de FCFA ;
+              * Un partenariat envisagé sur plus de 10 ans.
+            </p>
+
+            <button class="text-green-500 voir">Voir plus</button>
+
+          </div>
+
+        </article>
+
+
+
+
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement"
+          style="background:var(--card-bg);border:1px solid var(--border-color)">
           <div class="gallery-img" data-lightbox="../image_site_cacao/feve.jpg">
-            <img src="../image_site_cacao/feve.jpg" alt="Amsterdam 2023" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/feve.jpg" alt="Amsterdam 2023" class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">🥉 Amsterdam 2023</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Événement</span><span class="text-xs" style="color:var(--text-secondary)">Octobre 2023</span></div>
-            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Médaille de bronze au concours international d'Amsterdam</h3>
-            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">Notre cacao d'excellence a reçu la reconnaissance internationale lors du prestigieux Cocoa of Excellence Programme.</p>
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Événement</span><span
+                class="text-xs" style="color:var(--text-secondary)">Octobre 2023</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Médaille de bronze au concours
+              international d'Amsterdam</h3>
+            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">Notre cacao d'excellence a reçu
+              la reconnaissance internationale lors du prestigieux Cocoa of Excellence Programme.</p>
             <!-- <a href="#" class="text-forest-600 text-sm font-medium hover:text-forest-800 transition-colors">Lire la suite →</a> -->
           </div>
         </article>
 
-        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="partenariat" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.1s">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="partenariat"
+          style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.1s">
           <div class="gallery-img" data-lightbox="../image_site_cacao/espace_travail.jpg">
-            <img src="../image_site_cacao/espace_travail.jpg" alt="TRACE 2025" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/espace_travail.jpg" alt="TRACE 2025" class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">✅ Certification TRACE</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-forest-100 text-forest-700 px-3 py-1 rounded-full text-xs font-medium">Partenariat</span><span class="text-xs" style="color:var(--text-secondary)">Mars 2025</span></div>
-            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Obtention de la certification TRACE 2025</h3>
-            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">UMO.PRO.CAO.E.SCOOPS renforce sa crédibilité auprès des acheteurs internationaux avec une traçabilité totale.</p>
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-forest-100 text-forest-700 px-3 py-1 rounded-full text-xs font-medium">Partenariat</span><span
+                class="text-xs" style="color:var(--text-secondary)">Mars 2025</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Obtention de la certification TRACE
+              2025</h3>
+            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">UMO.PRO.CAO.E.SCOOPS renforce sa
+              crédibilité auprès des acheteurs internationaux avec une traçabilité totale.</p>
             <!-- <a href="#" class="text-forest-600 text-sm font-medium hover:text-forest-800 transition-colors">Lire la suite →</a> -->
           </div>
         </article>
 
-         <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.4s">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement"
+          style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.4s">
           <div class="gallery-img" data-lightbox="../image_site_cacao/MINISTRE.jpg">
-            <img src="../image_site_cacao/MINISTRE.jpg" alt="visite ministre" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/MINISTRE.jpg" alt="visite ministre" class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">En 2025</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Projet</span><span class="text-xs" style="color:var(--text-secondary)">Février 2025</span></div>
-            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Une visite de haut niveau au cœur des plantations de cacao</h3>
-            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">la coopérative UMOPROCAOESCOOPS a eu l'honneur d'accueillir le Ministre du Commerce, Luc Magloire Mbarga Atangana, dans le cadre d'une visite officielle de ses sites de production de cacao. Cette descente sur le terrain a permis au membre du Gouvernement de découvrir les plantations de la coopérative, d'échanger avec les producteurs et d'apprécier 
-              les efforts déployés pour promouvoir un cacao d'excellence, durable et conforme aux standards internationaux..</p>
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Projet</span><span
+                class="text-xs" style="color:var(--text-secondary)">Février 2025</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Une visite de haut niveau au cœur
+              des plantations de cacao</h3>
+            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">la coopérative UMOPROCAOESCOOPS
+              a eu l'honneur d'accueillir le Ministre du Commerce, Luc Magloire Mbarga Atangana, dans le cadre d'une
+              visite officielle de ses sites de production de cacao. Cette descente sur le terrain a permis au membre du
+              Gouvernement de découvrir les plantations de la coopérative, d'échanger avec les producteurs et
+              d'apprécier
+              les efforts déployés pour promouvoir un cacao d'excellence, durable et conforme aux standards
+              internationaux..</p>
             <!-- <a href="#" class="text-forest-600 text-sm font-medium hover:text-forest-800 transition-colors">Lire la suite →</a> -->
           </div>
         </article>
 
-        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="recolte" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.2s">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="recolte"
+          style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.2s">
           <div class="gallery-img" data-lightbox="../image_site_cacao/sechage2.jpg">
-            <img src="../image_site_cacao/sechage2.jpg" alt="Récolte 2024" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/sechage2.jpg" alt="Récolte 2024" class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">🌱 Récolte 2024</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-cacao-100 text-cacao-700 px-3 py-1 rounded-full text-xs font-medium">Récolte</span><span class="text-xs" style="color:var(--text-secondary)">Novembre 2024</span></div>
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-cacao-100 text-cacao-700 px-3 py-1 rounded-full text-xs font-medium">Récolte</span><span
+                class="text-xs" style="color:var(--text-secondary)">Novembre 2024</span></div>
             <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Bilan de la campagne cacao 2024</h3>
-            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">La campagne 2024 s'est achevée avec d'excellents résultats grâce au travail acharné de nos 623 producteurs.</p>
+            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">La campagne 2024 s'est achevée
+              avec d'excellents résultats grâce au travail acharné de nos 623 producteurs.</p>
             <!-- <a href="#" class="text-forest-600 text-sm font-medium hover:text-forest-800 transition-colors">Lire la suite →</a> -->
           </div>
         </article>
 
-        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="partenariat" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.3s">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="partenariat"
+          style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.3s">
           <div class="gallery-img" data-lightbox="../image_site_cacao/sacEt_travailleur.jpg">
-            <img src="../image_site_cacao/sacEt_travailleur.jpg" alt="Partenariat Puratos" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/sacEt_travailleur.jpg" alt="Partenariat Puratos"
+              class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">🤝 Partenariat</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Partenariat</span><span class="text-xs" style="color:var(--text-secondary)">Janvier 2024</span></div>
-            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Nouveau partenariat avec Puratos</h3>
-            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">UMO.PRO.CAO.E.SCOOPS renforce son rayonnement international avec un accord de fourniture avec Puratos.</p>
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Partenariat</span><span
+                class="text-xs" style="color:var(--text-secondary)">Janvier 2024</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Nouveau partenariat avec Puratos
+            </h3>
+            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">UMO.PRO.CAO.E.SCOOPS renforce
+              son rayonnement international avec un accord de fourniture avec Puratos.</p>
             <!-- <a href="#" class="text-forest-600 text-sm font-medium hover:text-forest-800 transition-colors">Lire la suite →</a> -->
           </div>
         </article>
 
-        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.4s">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="evenement"
+          style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.4s">
           <div class="gallery-img" data-lightbox="../image_site_cacao/champ.jpg">
-            <img src="../image_site_cacao/champ.jpg" alt="Programme Bio 2026" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/champ.jpg" alt="Programme Bio 2026" class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">🌿 Bio 2026</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Projet</span><span class="text-xs" style="color:var(--text-secondary)">Février 2025</span></div>
-            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Lancement du programme de certification biologique</h3>
-            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">La coopérative s'engage dans un programme de certification biologique avec livraison prévue en 2026.</p>
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">Projet</span><span
+                class="text-xs" style="color:var(--text-secondary)">Février 2025</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Lancement du programme de
+              certification biologique</h3>
+            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">La coopérative s'engage dans un
+              programme de certification biologique avec livraison prévue en 2026.</p>
             <!-- <a href="#" class="text-forest-600 text-sm font-medium hover:text-forest-800 transition-colors">Lire la suite →</a> -->
           </div>
         </article>
 
-        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="recolte" style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.5s">
+        <article class="blog-card rounded-2xl overflow-hidden card-lift reveal-up" data-category="recolte"
+          style="background:var(--card-bg);border:1px solid var(--border-color);animation-delay:.5s">
           <div class="gallery-img" data-lightbox="../image_site_cacao/sac_cacao.jpg">
-            <img src="../image_site_cacao/sac_cacao.jpg" alt="Logistique camions" class="w-full h-48 object-cover"/>
+            <img src="../image_site_cacao/sac_cacao.jpg" alt="Logistique camions" class="w-full h-48 object-cover" />
             <div class="gallery-overlay"><span class="text-white text-xs">🚛 Logistique</span></div>
           </div>
           <div class="p-6">
-            <div class="flex items-center gap-2 mb-3"><span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-medium">Infrastructure</span><span class="text-xs" style="color:var(--text-secondary)">Juillet 2024</span></div>
-            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Acquisition de deux camions de 16 tonnes</h3>
-            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">La coopérative renforce sa logistique pour assurer efficacement la collecte et la livraison du cacao.</p>
+            <div class="flex items-center gap-2 mb-3"><span
+                class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-medium">Infrastructure</span><span
+                class="text-xs" style="color:var(--text-secondary)">Juillet 2024</span></div>
+            <h3 class="font-display text-lg mb-2" style="color:var(--text-primary)">Acquisition de deux camions de 16
+              tonnes</h3>
+            <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">La coopérative renforce sa
+              logistique pour assurer efficacement la collecte et la livraison du cacao.</p>
             <!-- <a href="#" class="text-forest-600 text-sm font-medium hover:text-forest-800 transition-colors">Lire la suite →</a> -->
           </div>
         </article>
 
       </div>
       <div id="no-results" class="hidden text-center py-20" style="color:var(--text-secondary)">
-        <div class="text-5xl mb-4">🔍</div><p class="font-display text-xl">Aucun résultat trouvé</p>
+        <div class="text-5xl mb-4">🔍</div>
+        <p class="font-display text-xl">Aucun résultat trouvé</p>
       </div>
     </div>
   </section>
 
   <!-- NEWSLETTER — image bg -->
-  <section class="py-20 relative overflow-hidden img-bg-section text-center" style="background-image:url('../image_site_cacao/photo_famille2.jpg')">
+  <section class="py-20 relative overflow-hidden img-bg-section text-center"
+    style="background-image:url('../image_site_cacao/photo_famille2.jpg')">
     <div class="absolute inset-0" style="background:rgba(13,31,15,0.88)"></div>
     <div class="relative z-10 max-w-2xl mx-auto px-6 reveal-up">
       <h2 class="font-display text-3xl text-white mb-4">Restez informé</h2>
       <a href="./contact.html" class="text-green-300/60 mb-8"> Contacter →</p>
-      <!-- <form id="newsletter-form" class="flex max-w-md mx-auto">
+        <!-- <form id="newsletter-form" class="flex max-w-md mx-auto">
         <input type="email" name="email" placeholder="Votre adresse email" class="newsletter-input" required />
         <button type="submit" class="bg-cacao-500 hover:bg-cacao-600 text-white px-6 py-3 rounded-r-full font-medium transition-colors text-sm whitespace-nowrap">S'inscrire</button>
       </form> -->
@@ -332,10 +468,14 @@
       <div class="grid md:grid-cols-4 gap-10 mb-12">
         <div class="md:col-span-2">
           <div class="flex items-center gap-3 mb-4">
-            <img src="../image_site_cacao/logo-removebg-preview.png" alt="Logo" class="w-14 h-14 object-contain"/>
-            <div><p class="font-display font-bold text-sm">UMO.PRO.CAO.E.SCOOPS</p><p class="text-xs text-cacao-400 tracking-widest">Cameroun</p></div>
+            <img src="../image_site_cacao/logo-removebg-preview.png" alt="Logo" class="w-14 h-14 object-contain" />
+            <div>
+              <p class="font-display font-bold text-sm">UMO.PRO.CAO.E.SCOOPS</p>
+              <p class="text-xs text-cacao-400 tracking-widest">Cameroun</p>
+            </div>
           </div>
-          <p class="text-white/50 text-sm leading-relaxed max-w-xs">Coopérative de cacao d'excellence au Cameroun, depuis 2016.</p>
+          <p class="text-white/50 text-sm leading-relaxed max-w-xs">Coopérative de cacao d'excellence au Cameroun,
+            depuis 2016.</p>
         </div>
         <div>
           <h4 class="font-medium text-white/80 mb-4 text-sm tracking-wide uppercase">Navigation</h4>
@@ -344,34 +484,43 @@
             <li><a href="apropos.html" class="hover:text-cacao-300 transition-colors">À Propos</a></li>
             <li><a href="activites.html" class="hover:text-cacao-300 transition-colors">Activités</a></li>
             <li><a href="produits.html" class="hover:text-cacao-300 transition-colors">Produits</a></li>
-        <a href="organigrame.html" class="text-forest-700 font-medium py-1">organigramme</a>
+            <a href="organigrame.html" class="text-forest-700 font-medium py-1">organigramme</a>
             <li><a href="actualites.html" class="hover:text-cacao-300 transition-colors">Actualités</a></li>
             <li><a href="contact.html" class="hover:text-cacao-300 transition-colors">Contact</a></li>
           </ul>
         </div>
 
-         <div>
+        <div>
           <h4 class="font-medium text-white/80 mb-4 text-sm tracking-wide uppercase">RESEAUX SOCIAUX</h4>
           <ul class="space-y-2 text-sm text-white/50">
-            <li><a  style="display:flex ; gap:10px; padding-left: 10px; padding-bottom: 8px;" href="https://www.linkedin.com/in/umoprocaoe-scoops-8b8805432" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>  <span style=" padding-left: 7px;">LinkedIn</span>
-                </a>
+            <li><a style="display:flex ; gap:10px; padding-left: 10px; padding-bottom: 8px;"
+                href="https://www.linkedin.com/in/umoprocaoe-scoops-8b8805432" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg> <span style=" padding-left: 7px;">LinkedIn</span>
+              </a>
             </li>
 
-            <li><a style="display:flex ; gap:10px; padding-left: 8px;" href="https://www.facebook.com/profile.php?id=61593734860109" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.816v1.234h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
-                  </svg> <span style=" padding-left: 7px;">Facebook</span>
-                </a>
-              </li>
+            <li><a style="display:flex ; gap:10px; padding-left: 8px;"
+                href="https://www.facebook.com/profile.php?id=61593734860109" target="_blank" rel="noopener noreferrer"
+                aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.816v1.234h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                </svg> <span style=" padding-left: 7px;">Facebook</span>
+              </a>
+            </li>
 
-            <li><a style="display:flex ; gap:10px; padding-bottom: 8px;" href="https://whatsapp.com/channel/0029VbDqdAo30LKWBetM9K0u" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.663.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.185.564c.173.087.289.13.332.202.043.072.043.419-.101.824z"/>
-                  </svg> <span style="padding-top: 5px; padding-left: 0px;">Chaine WhatsApp </span>
-                </a>
+            <li><a style="display:flex ; gap:10px; padding-bottom: 8px;"
+                href="https://whatsapp.com/channel/0029VbDqdAo30LKWBetM9K0u" target="_blank" rel="noopener noreferrer"
+                aria-label="WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.663.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.185.564c.173.087.289.13.332.202.043.072.043.419-.101.824z" />
+                </svg> <span style="padding-top: 5px; padding-left: 0px;">Chaine WhatsApp </span>
+              </a>
             </li>
 
           </ul>
@@ -380,17 +529,29 @@
         <div>
           <h4 class="font-medium text-white/80 mb-4 text-sm tracking-wide uppercase">Contact</h4>
           <ul class="space-y-2 text-sm text-white/50">
-            <li>Arrondissement d'Ayos</li><li>Nyong-et-Mfoumou, Centre</li><li>Cameroun</li>
-            <li class="pt-2"><a href="contact.html" class="text-cacao-400 hover:text-cacao-300 transition-colors">Nous contacter →</a></li>
+            <li>Arrondissement d'Ayos</li>
+            <li>Nyong-et-Mfoumou, Centre</li>
+            <li>Cameroun</li>
+            <li class="pt-2"><a href="contact.html" class="text-cacao-400 hover:text-cacao-300 transition-colors">Nous
+                contacter →</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
-        <p>© 2025 UMO.PRO.CAO.E.SCOOPS. Tous droits réservés.</p><p>NZ STUDIO Creative</p>
+      <div
+        class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/30">
+        <p>© 2025 UMO.PRO.CAO.E.SCOOPS. Tous droits réservés.</p>
+        <p>NZ STUDIO Creative</p>
       </div>
     </div>
   </footer>
-  <a href="https://wa.me/237676204453" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <a href="https://wa.me/237676204453" target="_blank"
+    class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all hover:scale-110"><svg
+      class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg></a>
   <button id="back-top" aria-label="Retour en haut">↑</button>
   <script src="../js/main.js"></script>
-</body></html>
+</body>
+
+</html>
